@@ -1,16 +1,15 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import models.Task;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
 
 public class App {
-    public static void main(String[] args) { //type “psvm + tab” to autocreate this
+    public static void main(String[] args) {
         staticFileLocation("/public");
-
+        port(9090);
         //get: delete all tasks
         get("/tasks/delete", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

@@ -1,4 +1,22 @@
-{{#partial "content"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Details</title>
+
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+</head>
+<body>
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="/">Home</a></li>
+    <li role="presentation"><a href="/tasks/new">Add a New Task</a></li>
+</ul>
+<div class="container">
+    <!--begin main template-->
+    <div class="page-header">
+        <h1>Welcome to my To Do List. <small>Let's be organized, focused, and efficient.</small></h1>
+    </div>
+
+    <div class="col-md-12">
 
     <p>Description:</p>
 
@@ -16,7 +34,9 @@
         <a href="/tasks/{{task.id}}/update">Edit this task</a><br>
         <a href="/tasks/{{task.id}}/delete">DELETE this task (no undo)</a>
     </p>
+    </div>
+</div>
+</body>
+</html>
 
-{{/partial}}
 
-{{> layout.hbs}}

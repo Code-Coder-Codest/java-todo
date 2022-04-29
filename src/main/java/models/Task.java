@@ -20,31 +20,37 @@ public class Task {
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public static ArrayList<Task> getAll(){
+
         return instances;
     }
 
     public static void clearAllTasks(){
+
         instances.clear();
     }
 
     public boolean getCompleted(){
+
         return this.completed;
     }
 
     public LocalDateTime getCreatedAt() {
+
         return createdAt;
     }
 
     public int getId() {
+
         return id;
     }
 
     public static Task findById(int id){
-        return instances.get(id-1); //why minus 1? See if you can figure it out.
+        return instances.get(id-1);
     }
 
     public void update(String content) {
@@ -52,6 +58,6 @@ public class Task {
     }
 
     public void deleteTask(){
-        instances.remove(id-1); //same reason
+        instances.remove(id-1);
     }
 }
