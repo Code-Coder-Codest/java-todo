@@ -54,11 +54,6 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
-
-# End of https://www.gitignore.io/api/java,gradle
-
 # Java and Gradle #
 ############
 build/
@@ -75,3 +70,9 @@ settings.gradle
 .idea
 .idea/
 *.iml
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+# End of https://www.gitignore.io/api/java,gradle
+

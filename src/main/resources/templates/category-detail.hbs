@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>To do list</title>
+    <title>{{#block "title"}}To do list{{/block}}</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <ul class="dropdown-menu">
             {{#if categories}}
                 {{#each categories}}
-                    <li><a href="/categories/new/{{id}}">{{name}}</a></li>
+                    <li><a href="/categories/{{id}}">{{name}}</a></li>
                 {{/each}}
                 <li><a href="/categories/new">Add a Category</a></li>
             {{else}}
@@ -30,24 +30,20 @@
         <h1>Welcome to my To Do List. <small>Let's be organized, focused, and efficient.</small></h1>
     </div>
     <div class="col-md-12">
-        <h1> Task list</h1>
-        {{#if tasks}}
+        <h1>{{category.name}}</h1>
+        <p>Here are all the tasks listed in this category:</p>
+        <ul>
             {{#each tasks}}
-                <p>{{name}}<a href="/categories/{{categoryId}}/tasks/{{id}}">READ MORE>?>.</a></p>
+                <li>
+                    <p><a href="/categories/{{category.id}}/tasks/{{id}}">{{description}}</a></p>
+                </li>
             {{/each}}
-        {{else}}
-            <p>No tasks!</p>
-        {{/if}}
+        </ul>
+        <a href="/categories/{{category.id}}/edit">Edit this category</a><br>
+        <a href="/categories/{{category.id}}/delete">DELETE this category</a>
     </div>
 </div>
-<footer class="footer">
-    <div class="container">
-        <hr>
-        <p class="text-muted">
-            <a href="/categories/delete">delete all categories and tasks</a><br>
-            <a href="/tasks/delete">delete all tasks</a>
-        </p>
-    </div>
-</footer>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </html>
